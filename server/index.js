@@ -1,9 +1,19 @@
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
+const cors = require('cors');
+
 
 const app = express();
 const server = http.createServer(app);
+
+app.use(cors({
+    origin: 'https://victorious-mud-0bb268c00.5.azurestaticapps.net',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+    credentials: true
+  }));
+  
 
 const io = socketIo(server, {
     cors: {
