@@ -7,7 +7,12 @@ const app = express();
 
 // Create an HTTP server and integrate with Socket.IO
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = socketIo(server, {
+    cors: {
+        origin: "*",
+        methods: ["GET", "POST"]
+    }
+});
 
 // Serve static files from the public directory
 app.use(express.static('public'));
