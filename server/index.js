@@ -7,12 +7,12 @@ const cors = require('cors');
 const app = express();
 const server = http.createServer(app);
 
-// app.use(cors({
-//     origin: '*',
-//     methods: ['GET', 'POST'],
-//     allowedHeaders: ['Content-Type'],
-//     credentials: true
-//   }));
+app.use(cors({
+    origin: '*',
+    // methods: ['GET', 'POST'],
+    // allowedHeaders: ['Content-Type'],
+    // credentials: true
+  }));
   
 
 const io = socketIo(server, {
