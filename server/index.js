@@ -9,16 +9,16 @@ const server = http.createServer(app);
 
 app.use(cors({
     origin: '*',
-    // methods: ['GET', 'POST'],
-    // allowedHeaders: ['Content-Type'],
-    // credentials: true
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+    credentials: true
   }));
   
 
 const io = socketIo(server, {
     cors: {
-        origin: "*"
-        // methods: ["GET", "POST"]
+        origin: "*",
+        methods: ["GET", "POST"]
     }
 });
 
