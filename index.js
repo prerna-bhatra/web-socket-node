@@ -30,7 +30,7 @@ io.on('connection', (socket) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8002;
 server.listen(PORT, (err) => {
   if (err) {
     console.error('Failed to start the server:', err);
